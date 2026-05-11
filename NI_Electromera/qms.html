@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>АО "НИИ ЭЛЕКТРОМЕРА" - корпоративный сайт</title>
+		<link rel="stylesheet" href="css/qms.css" />
+		<link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+	</head>
+	<body class="admin-mode">
+		<header>
+			<a href="index.html" class="logo" aria-label="На главную">
+				<img
+					src="images/logos/logo.svg"
+					alt="Logo of Electromera"
+					width="288"
+				/>
+			</a>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="unknown.html">Реквизиты</a></li>
+					<li><a href="blanks.html">Бланки</a></li>
+					<li><a href="standardization.html">Стандартизация</a></li>
+					<li><a href="qms.html">СМК</a></li>
+					<li>
+						<a href="security.html">Информационная безопасность</a>
+					</li>
+					<li><a href="unknown.html">Телефоны и E-Mail</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="qms-panel">
+				<h1>Система менеджмента качества</h1>
+				<div class="admin-panel">
+					<div class="admin-title">
+						<img
+							src="images/icons/admin-icon.svg"
+							alt="Admin icon"
+							width="32"
+						/>
+						<h2>Административный режим</h2>
+					</div>
+					<div class="admin-check">
+						<input type="text" class="admin-code" placeholder="Введите код" />
+						<a href="" class="admin-code__btn btn">Вход</a>
+					</div>
+					<div class="admin-login__message" aria-live="polite"></div>
+					<div class="admin-mode-exit admin-actions">
+						<img
+							src="images/icons/exit.svg"
+							width="24"
+							data-action="logout"
+							class="admin-icon admin-icon-exit"
+						/>
+						<p class="admin-icon">Выйти из административного режима</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="table-container">
+				<table class="documents-table">
+					<thead>
+						<tr>
+							<th>Обозначение</th>
+							<th>Наименование таблицы</th>
+							<th>Установка</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="add-row admin-actions">
+							<td colspan="3" class="admin-actions">
+								<img
+									src="images/icons/add.svg"
+									alt="Add icon"
+									width="48"
+									data-action="add"
+									class="admin-icon admin-icon-add"
+								/>
+							</td>
+						</tr>
+						<tr class="admin-actions admin-tr">
+							<td class="admin-actions">
+								<textarea
+									class="admin-actions"
+									placeholder="Обозначение"
+								></textarea>
+							</td>
+							<td class="admin-actions">
+								<textarea
+									class="admin-actions"
+									placeholder="Наименование таблицы"
+								></textarea>
+								<img
+									src="images/icons/save.svg"
+									alt="Save icon"
+									width="24"
+									class="admin-icon admin-icon-save"
+								/>
+							</td>
+							<td><input type="file" class="admin-actions" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>АО "НИИ ЭЛЕКТРОМЕРА" - корпоративный сайт</title>
+		<link rel="stylesheet" href="css/standardization.css" />
+		<link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+	</head>
+	<body class="admin-mode">
+		<header>
+			<a href="index.html" class="logo" aria-label="На главную">
+				<img
+					src="images/logos/logo.svg"
+					alt="Logo of Electromera"
+					width="288"
+				/>
+			</a>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="unknown.html">Реквизиты</a></li>
+					<li><a href="blanks.html">Бланки</a></li>
+					<li><a href="standardization.html">Стандартизация</a></li>
+					<li><a href="qms.html">СМК</a></li>
+					<li>
+						<a href="security.html">Информационная безопасность</a>
+					</li>
+					<li><a href="unknown.html">Телефоны и E-Mail</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="control-panel">
+				<div class="search-panel">
+					<h1>Электронный архив стандартов</h1>
+					<div class="search-box">
+						<input type="text" class="search-box__input" placeholder="Поиск" />
+						<a href="" class="search-box__btn btn">Найти</a>
+					</div>
+				</div>
+				<div class="admin-panel">
+					<div class="admin-title">
+						<img
+							src="images/icons/admin-icon.svg"
+							alt="Admin icon"
+							width="32"
+						/>
+						<h2 class="title">Административный режим</h2>
+					</div>
+					<div class="admin-check">
+						<input type="text" class="admin-code" placeholder="Введите код" />
+						<a href="" class="admin-code__btn btn">Вход</a>
+					</div>
+					<div class="admin-login__message" aria-live="polite"></div>
+					<div class="admin-mode-exit admin-actions">
+						<img
+							src="images/icons/exit.svg"
+							width="24"
+							data-action="logout"
+							class="admin-icon admin-icon-exit"
+						/>
+						<p class="admin-icon">Выйти из административного режима</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="documents-cards">
+				<div class="documents-cards-item admin-card admin-icon">
+					<img
+						src="images/icons/add.svg"
+						alt="Add icon"
+						width="48"
+						data-action="add"
+						class="admin-icon admin-icon-add"
+					/>
+				</div>
+				<article
+					class="documents-cards-item admin-card-secondary admin-actions"
+				>
+					<textarea
+						class="admin-card-designation admin-actions"
+						placeholder="Обозначение"
+					></textarea>
+					<textarea
+						class="admin-card-name admin-actions"
+						placeholder="Наименование"
+					></textarea>
+					<textarea
+						class="admin-card-note admin-actions"
+						placeholder="Примечание"
+					></textarea>
+					<input type="file" class="admin-action" />
+					<img
+						src="images/icons/save.svg"
+						alt="Save icon"
+						width="24"
+						class="admin-icon admin-icon-save"
+					/>
+				</article>
+			</section>
+		</main>
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>

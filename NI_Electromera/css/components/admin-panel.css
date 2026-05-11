@@ -1,0 +1,47 @@
+.admin-panel {
+	margin-left: 16px;
+	margin-right: 72px;
+	align-self: center;
+}
+.admin-panel h2 {
+	margin: 0 0 8px 0;
+}
+.admin-check {
+	display: flex;
+	align-items: center;
+}
+
+.admin-panel input {
+	background-color: var(--color-bg-btn);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-lg);
+}
+.admin-code__btn {
+	margin-left: 24px;
+	margin-right: 0px;
+}
+.admin-mode-exit {
+	margin-top: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: 0.2s ease;
+	cursor: pointer;
+}
+
+.admin-mode-exit:hover .admin-icon-exit {
+	opacity: 1;
+}
+.admin-mode-exit p {
+	margin: 0;
+}
+.admin-mode-exit p:hover {
+	opacity: 0.5;
+	transform: scale(1);
+}
+.admin-login__message {
+	font-weight: 600;
+	padding-bottom: 16px;
+	transition: 0.2s ease;
+	font-size: var(--font-size-sm);
+}

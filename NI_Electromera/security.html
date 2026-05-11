@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>АО "НИИ ЭЛЕКТРОМЕРА" - корпоративный сайт</title>
+		<link rel="stylesheet" href="css/security.css" />
+		<link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html" class="logo" aria-label="На главную">
+				<img
+					src="images/logos/logo.svg"
+					alt="Logo of Electromera"
+					width="288"
+				/>
+			</a>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="unknown.html">Реквизиты</a></li>
+					<li><a href="blanks.html">Бланки</a></li>
+					<li><a href="standardization.html">Стандартизация</a></li>
+					<li><a href="qms.html">СМК</a></li>
+					<li>
+						<a href="security.html">Информационная безопасность</a>
+					</li>
+					<li><a href="unknown.html">Телефоны и E-Mail</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="security-section">
+				<div class="info-block">
+					<img
+						data-id="${item.id}"
+						data-type="${type}"
+						src="images/icons/edit.svg"
+						alt="Edit icon"
+						width="20"
+						data-action="edit"
+						class="admin-icon admin-icon-edit"
+					/>
+					<p class="info-block__text"></p>
+				</div>
+
+				<ul class="docs-list">
+					<img
+						src="images/icons/add.svg"
+						alt="Add icon"
+						width="32"
+						data-action="add"
+						class="admin-icon admin-icon-add"
+					/>
+				</ul>
+			</section>
+		</main>
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>

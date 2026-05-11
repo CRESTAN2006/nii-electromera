@@ -1,0 +1,100 @@
+@import 'settings/variables.css';
+@import 'settings/normalize.css';
+
+@import 'base/base.css';
+@import 'base/typography.css';
+
+@import 'layout/header.css';
+
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/admin-panel.css';
+
+.control-panel {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 24px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--color-border);
+}
+.search-panel {
+	margin: 0 0 0 72px;
+}
+.search-panel input {
+	background-color: var(--color-bg-btn);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-lg);
+}
+.search-box__btn {
+	margin-left: 24px;
+}
+
+body.admin-mode .admin-icon,
+body.admin-mode .admin-actions {
+	display: grid;
+}
+
+body.admin-mode textarea {
+	background-color: var(--color-bg-btn);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-base);
+	border: 1px solid var(--color-border);
+	outline: none;
+	resize: none;
+	margin: 4px 8px;
+}
+
+.admin-card {
+	cursor: pointer;
+}
+
+body.admin-mode .admin-icon {
+	cursor: pointer;
+	transition: 0.2s ease;
+	opacity: 0.5;
+}
+
+body.admin-mode .admin-icon:hover {
+	opacity: 1;
+	transform: scale(1.05);
+}
+
+body.admin-mode .admin-mode-exit {
+	display: flex;
+}
+body.admin-mode .admin-mode-exit p:hover {
+	opacity: 0.5;
+	transform: scale(1);
+}
+body:not(.admin-mode) .admin-icon,
+body:not(.admin-mode) .admin-actions {
+	display: none;
+}
+
+body.admin-mode .admin-icon-save {
+	margin: 4px auto 8px auto;
+}
+
+body.admin-mode .admin-card-action {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 4px 8px 0 8px;
+}
+
+.admin-card-secondary input {
+	margin: 4px 0 4px 8px;
+}
+
+@media (max-width: 1651px) {
+	.admin-panel .admin-check {
+		display: grid;
+		grid-template-rows: auto;
+		align-items: center;
+		row-gap: 4px;
+	}
+	.admin-panel .admin-code__btn {
+		margin: 0;
+		justify-self: start;
+	}
+}
