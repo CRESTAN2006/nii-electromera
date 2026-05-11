@@ -1,0 +1,189 @@
+@import 'settings/variables.css';
+@import 'settings/normalize.css';
+
+@import 'base/base.css';
+@import 'base/typography.css';
+
+@import 'layout/header.css';
+
+@import 'components/buttons.css';
+@import 'components/admin-panel.css';
+@import 'components/admin-components-main.css';
+main {
+	display: grid;
+	grid-template-columns: 50% 23% 1fr;
+	grid-template-rows: auto auto auto;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.greetings {
+	grid-area: 1 / 1 / 2 / 3;
+	align-items: center;
+	margin: 0 72px;
+	align-self: center;
+}
+
+.admin-panel {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.news {
+	grid-area: 2 / 1 / 4 / 2;
+	background-color: var(--color-bg-card);
+	box-shadow: var(--shadow-md);
+	border-radius: var(--radius-xl);
+	margin: 16px 72px 0 72px;
+	overflow-x: hidden;
+	max-height: 600px;
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-text-muted) var(--color-bg-page);
+}
+.news-title {
+	display: flex;
+	align-items: center;
+}
+.news-title .admin-icon {
+	margin-left: auto;
+	margin-right: 8px;
+}
+.news-title h2 {
+	margin: 4px 0 8px 24px;
+}
+.news-content-title {
+	display: flex;
+	align-items: center;
+}
+.news .admin-icon-edit {
+	margin-left: 16px;
+}
+.news .admin-icon-delete {
+	margin-left: auto;
+	margin-right: 16px;
+}
+.news-item {
+	margin: 0 24px 16px 24px;
+}
+.news-item p {
+	margin-top: 4px;
+}
+.news-item__date {
+	color: var(--color-text-muted);
+	font-weight: 600;
+}
+.news::-webkit-scrollbar {
+	width: 8px;
+}
+.news::-webkit-scrollbar-track {
+	background: var(--color-bg-page);
+	border-radius: 4px;
+}
+.news::-webkit-scrollbar-thumb {
+	background: var(--color-text-muted);
+	border-radius: 4px;
+}
+.news::-webkit-scrollbar-thumb:hover {
+	background: var(--color-link);
+}
+
+.documents,
+.legal-docs {
+	margin-top: 16px;
+}
+
+.documents {
+	grid-area: 2 / 2 / 3 / 4;
+	align-self: center;
+	background-color: var(--color-bg-card);
+	margin-right: 72px;
+	border-radius: var(--radius-xl);
+	box-shadow: var(--shadow-md);
+	overflow-x: hidden;
+	max-height: 250px;
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-text-muted) var(--color-bg-page);
+}
+.documents-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.documents-title .admin-icon {
+	margin-top: 8px;
+	margin-right: 8px;
+}
+.documents h2 {
+	padding: 4px 24px 0 24px;
+	margin: 0;
+}
+.documents ul {
+	padding: 4px 24px 0 24px;
+	margin-bottom: 8px;
+}
+.documents li {
+	display: flex;
+	align-items: center;
+}
+.documents li .admin-icon-edit {
+	margin: 0 8px;
+}
+.documents li .admin-icon-delete {
+	margin-left: auto;
+	margin-right: 16px;
+}
+
+.documents li a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: 0.2s ease;
+}
+.documents li a:hover img {
+	transform: scale(1.05);
+}
+.documents p {
+	margin: 8px 0 0 4px;
+}
+.documents::-webkit-scrollbar {
+	width: 8px;
+}
+
+.documents::-webkit-scrollbar-track {
+	background: var(--color-bg-page);
+	border-radius: 4px;
+}
+
+.documents::-webkit-scrollbar-thumb {
+	background: var(--color-text-muted);
+	border-radius: 4px;
+}
+
+.legal-docs {
+	grid-area: 3 / 2 / 4 / 4;
+}
+
+@media (max-width: 1651px) {
+	.admin-panel .admin-check {
+		display: grid;
+		grid-template-rows: auto;
+		align-items: center;
+		row-gap: 4px;
+	}
+	.admin-panel .admin-code__btn {
+		margin: 0;
+		justify-self: start;
+	}
+}
+
+@media (max-width: 1104px) {
+	.greetings,
+	.news {
+		margin-left: 16px;
+	}
+
+	.admin-panel {
+		margin-left: 0px;
+	}
+}
