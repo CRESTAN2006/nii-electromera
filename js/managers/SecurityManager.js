@@ -128,7 +128,7 @@ class SecurityManager {
 				item => `
 			<li class="docs-list__item" data-id="${item.id}" data-type="doc" style="display: flex; align-items: center; gap: 8px;">
 				${isAdmin ? `<img data-id="${item.id}" data-type="doc" src="images/icons/edit.svg" alt="Edit icon" width="20" data-action="edit" class="admin-icon admin-icon-edit" style="cursor: pointer;" />` : ''}
-				<a href="${item.fileUrl}" download="${this.getFileName(item)}" style="display: flex; align-items: center; gap: 8px; flex: 1; text-decoration: none; color: inherit;">
+				<a href="${item.fileUrl}" download="${this.getFileName(item)}" style="display: flex; align-items: center; gap: 8px; flex: 1;">
 					<img src="images/icons/document-icon.svg" width="16" alt="Иконка документа" />
 					<p style="margin: 0;">${this.escapeHtml(item.title)}</p>
 				</a>
