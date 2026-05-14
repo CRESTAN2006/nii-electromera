@@ -1,4 +1,3 @@
-// js/managers/SecurityManager.js
 import storage from '../Storage.js'
 
 class SecurityManager {
@@ -284,10 +283,23 @@ class SecurityManager {
 	editInfoText() {
 		const wrapper = this.infoBlock.querySelector('.info-text-wrapper')
 		const textEl = wrapper.querySelector('.info-block__text')
-		const oldText = textEl.textContent
+
+		const oldHtml = textEl.innerHTML
+		const tempDiv = document.createElement('div')
+		tempDiv.innerHTML = oldHtml
+
+		tempDiv.querySelectorAll('a').forEach(a => {
+			const href = a.getAttribute('href')
+			const text = a.textContent
+			if (href && !text.includes('[')) {
+				a.outerHTML = `[${text}](${href})`
+			}
+		})
+
+		const rawText = tempDiv.innerHTML
 
 		const textarea = document.createElement('textarea')
-		textarea.value = oldText
+		textarea.value = rawText
 		textarea.style.width = '100%'
 		textarea.style.minHeight = '150px'
 		textarea.style.padding = '8px'
@@ -303,7 +315,6 @@ class SecurityManager {
 
 		const saveEdit = async () => {
 			let newText = textarea.value
-			newText = newText.replace(/\n/g, '<br>')
 			this.state.infoText = newText
 			await this.saveData()
 			this.render()
