@@ -1,4 +1,3 @@
-// js/managers/GreetingsManager.js
 import storage from '../Storage.js'
 
 class GreetingsManager {
