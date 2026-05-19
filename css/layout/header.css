@@ -14,6 +14,9 @@ header {
 
 .logo {
 	flex-shrink: 0;
+	background-color: #ffffff;
+	border-radius: 20px;
+	padding: 4px;
 }
 
 nav {
@@ -41,8 +44,4 @@ nav a.active {
 	color: var(--color-link-hover);
 	border-bottom-color: var(--color-link-hover);
 }
-@media (max-width: 1244px) {
-	.logo {
-		width: 192px;
-	}
-}
+
