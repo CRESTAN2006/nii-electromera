@@ -217,7 +217,16 @@ class NewsManager {
 		if (!form) return
 		const dateInput = form.querySelector('.admin-news-date')
 		const textarea = form.querySelector('.admin-news-text')
-		const date = dateInput?.value || this.getCurrentDate()
+
+		let date = dateInput?.value || this.getCurrentDate()
+
+		if (date && date.includes('-')) {
+			const parts = date.split('-')
+			if (parts.length === 3 && parts[0].length === 4) {
+				date = `${parts[2]}-${parts[1]}-${parts[0]}`
+			}
+		}
+
 		const text = textarea?.value.trim() || 'Новая новость'
 
 		const newItem = {
@@ -244,6 +253,9 @@ class NewsManager {
 		const contentDiv = newsItem?.querySelector('.news-content')
 		if (!contentDiv) return
 
+		const newsItemData = this.state.items.find(i => i.id == id)
+		if (!newsItemData) return
+
 		const currentHtml = contentDiv.innerHTML
 		const tempDiv = document.createElement('div')
 		tempDiv.innerHTML = currentHtml
@@ -262,6 +274,14 @@ class NewsManager {
 		rawText = rawText.replace(/&amp;/g, '&')
 		rawText = rawText.trim()
 
+		let dateForInput = newsItemData.date
+		if (dateForInput && dateForInput.includes('-')) {
+			const parts = dateForInput.split('-')
+			if (parts.length === 3 && parts[2].length === 4) {
+				dateForInput = `${parts[2]}-${parts[1]}-${parts[0]}`
+			}
+		}
+
 		const textarea = document.createElement('textarea')
 		textarea.value = rawText
 		textarea.style.width = '100%'
@@ -272,16 +292,35 @@ class NewsManager {
 		textarea.style.whiteSpace = 'normal'
 		textarea.style.wordWrap = 'break-word'
 
+		const dateInput = document.createElement('input')
+		dateInput.type = 'date'
+		dateInput.value = dateForInput
+		dateInput.style.width = '200px'
+		dateInput.style.padding = '8px'
+		dateInput.style.marginBottom = '8px'
+		dateInput.style.border = '1px solid var(--color-border)'
+		dateInput.style.borderRadius = 'var(--radius-md)'
+
 		contentDiv.innerHTML = ''
+		contentDiv.appendChild(dateInput)
 		contentDiv.appendChild(textarea)
 		textarea.focus()
 
 		const saveEdit = async () => {
+			let newDate = dateInput.value
+			if (newDate && newDate.includes('-')) {
+				const parts = newDate.split('-')
+				if (parts.length === 3 && parts[0].length === 4) {
+					newDate = `${parts[2]}-${parts[1]}-${parts[0]}`
+				}
+			}
+
 			let newText = textarea.value
 			newText = newText.trim()
 
 			const newsItemData = this.state.items.find(i => i.id == id)
 			if (newsItemData) {
+				newsItemData.date = newDate || this.getCurrentDate()
 				newsItemData.text = newText
 				await this.saveData()
 				this.render()
@@ -291,7 +330,7 @@ class NewsManager {
 		}
 
 		const outsideClick = e => {
-			if (!textarea.contains(e.target)) saveEdit()
+			if (!contentDiv.contains(e.target)) saveEdit()
 		}
 
 		const keyHandler = e => {
@@ -306,7 +345,6 @@ class NewsManager {
 			document.addEventListener('keydown', keyHandler)
 		}, 10)
 	}
-
 	async deleteNews(id) {
 		this.state.items = this.state.items.filter(i => i.id != id)
 		await this.saveData()
